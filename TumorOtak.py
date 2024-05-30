@@ -8,7 +8,7 @@ import time
 
 st.set_page_config(page_title="Tumor Otak.AI")
 # Memuat model yang telah dilatih
-model = load_model('C:\\Users\\model\\keras_model.h5')
+model = load_model('keras_model.h5')
 
 def prediksi_gambar(file_path):
     img = cv2.imread(file_path)
@@ -116,10 +116,10 @@ else:
                 col2.markdown(f'<p stye="text-align:left;">{caption2}</p>', unsafe_allow_html=True)
 
     images_info = [
-        {'path': 'C:\\Users\\model\\visualisasi_model\\accuracy_perclass.png','title': 'Accuracy Class', 'caption':'Tabel ini menunjukkan tingkat akurasi model klasifikasi untuk masing-masing kelas tumor, dengan akurasi tertinggi pada kelas no_tumor dan pituitary_tumor (0.94) serta akurasi terendah pada kelas meningioma_tumor (0.87).'},
-        {'path': 'C:\\Users\\model\\visualisasi_model\\accuracy_perepoch.png','title': 'Accuracy Epoch', 'caption':'Grafik ini menunjukkan kinerja model dalam hal akurasi selama pelatihan, bahwa akurasi pelatihan (acc) cepat mencapai hampir 100%, sementara akurasi pengujian (test acc) stabil di sekitar 85% setelah beberapa epoch, mengindikasikan potensi overfitting.'},
-        {'path': 'C:\\Users\\model\\visualisasi_model\\confusion_matrix.png','title': 'Confusion Matrix', 'caption':'Matriks menunjukkan confusion matrix yang menilai kinerja model klasifikasi tumor otak, di mana prediksi paling akurat terjadi pada kelas glioma_tumor dan pituitary_tumor, sementara kelas meningioma_tumor dan no_tumor menunjukkan beberapa kesalahan prediksi.'},
-        {'path': 'C:\\Users\\model\\visualisasi_model\\loss_perepoch.png','title': 'Loss Epoch', 'caption':'Grafik ini menunjukkan bahwa loss pada data pelatihan (loss) cepat menurun mendekati nol, sedangkan loss pada data pengujian (test loss) tetap relatif tinggi dan stabil, mengindikasikan bahwa model mengalami overfitting.'},
+        {'path': 'accuracy_perclass.png','title': 'Accuracy Class', 'caption':'Tabel ini menunjukkan tingkat akurasi model klasifikasi untuk masing-masing kelas tumor, dengan akurasi tertinggi pada kelas no_tumor dan pituitary_tumor (0.94) serta akurasi terendah pada kelas meningioma_tumor (0.87).'},
+        {'path': 'accuracy_perepoch.png','title': 'Accuracy Epoch', 'caption':'Grafik ini menunjukkan kinerja model dalam hal akurasi selama pelatihan, bahwa akurasi pelatihan (acc) cepat mencapai hampir 100%, sementara akurasi pengujian (test acc) stabil di sekitar 85% setelah beberapa epoch, mengindikasikan potensi overfitting.'},
+        {'path': 'confusion_matrix.png','title': 'Confusion Matrix', 'caption':'Matriks menunjukkan confusion matrix yang menilai kinerja model klasifikasi tumor otak, di mana prediksi paling akurat terjadi pada kelas glioma_tumor dan pituitary_tumor, sementara kelas meningioma_tumor dan no_tumor menunjukkan beberapa kesalahan prediksi.'},
+        {'path': 'loss_perepoch.png','title': 'Loss Epoch', 'caption':'Grafik ini menunjukkan bahwa loss pada data pelatihan (loss) cepat menurun mendekati nol, sedangkan loss pada data pengujian (test loss) tetap relatif tinggi dan stabil, mengindikasikan bahwa model mengalami overfitting.'},
     ]
     for i in range(0, len(images_info), 2):
         if i + 1 < len(images_info):
